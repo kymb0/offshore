@@ -3,7 +3,7 @@
 ### method 1:
 
 Add to proxychains.conf:
-`socks4 127.0.0.1 9000`  
+`socks4 127.0.0.1 1080`  
 `ssh -D 1080 -i 10.10.110.123/root_ssh root@NIX01`  
 `proxychains nmap -sV 172.16.1.0-254`  
 
