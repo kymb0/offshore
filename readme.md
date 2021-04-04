@@ -86,3 +86,11 @@ net localgroup administrators shrek /add
   * `invoke-command -computername <computername> -scriptblock{whoami;hostname}`
   * `invoke-command -computername (get-content serverlist.txt) -scriptblock{whoami;hostname}`
   * `invoke-command -computername (get-content serverlist.txt) -filepath c:\path\to\passhashes.ps1`
+In some cases there may be language constraints on a machine, in this case we must invoke a script that creates a function into a session, enter that session and THEN run the function - rather than attempting to run the script directly to the target.
+eg script contains:
+```
+Function test
+{
+write-output "welcome to the thunderdome"
+}
+```
